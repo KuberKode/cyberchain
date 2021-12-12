@@ -238,10 +238,12 @@ std::string Cyber::Data::Get(void){
 
 void Cyber::Data::Clear(void){
 	if (m_data != 0){
+		for (int i = m_length; i >= 0; i--) { m_data[i] = '\0';	}
 		delete[] m_data;
 	}
 
 	if (m_log != 0){
+		for (int i = m_log_length; i >= 0; i--) { m_log[i] = '\0'; }
 		delete[] m_log;
 	}
 	Init();
@@ -269,6 +271,7 @@ void Cyber::Data::Log(int8* text){
 	m_log[m_log_length] = '\0';
 	CopyInto(m_log, new_log, 0, m_log_length);
 
+	for (int i = new_len; i >= 0; i--) { new_log[i] = '\0';	}
 	delete[] new_log;
 	new_log = 0;
 }

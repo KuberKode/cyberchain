@@ -10,3 +10,5 @@ add_executable (cyberchain "cyberchain.cpp" "cyberchain.h" "./core/globals.h" ".
 
 # TODO: Add tests and install targets if needed.
 add_executable (data_test "./tests/data_test.cpp" "./core/globals.h" "./core/data.h" "./core/data.cpp")
+
+add_executable (list_test "./tests/list_test.cpp" "./core/globals.h" "./core/data.h" "./core/data.cpp" "./core/list.h")
